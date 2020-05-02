@@ -21,28 +21,26 @@ class XylophoneApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.black,
-        body: SafeArea(
-          child: Stack(
-            children: <Widget>[
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: List<Widget>.generate(
-                  7,
-                  (index) => _buildKey(index),
-                ),
+        body: Stack(
+          children: <Widget>[
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: List<Widget>.generate(
+                7,
+                (index) => _buildKey(index),
               ),
-              ButtonBar(
-                buttonPadding: EdgeInsets.symmetric(vertical: 16),
-                children: <Widget>[
-                  IconButton(
-                    color: Colors.white,
-                    onPressed: () {},
-                    icon: Icon(Icons.settings),
-                  )
-                ],
-              ),
-            ],
-          ),
+            ),
+            ButtonBar(
+              buttonPadding: EdgeInsets.symmetric(vertical: 16),
+              children: <Widget>[
+                IconButton(
+                  color: Colors.white,
+                  onPressed: () {},
+                  icon: Icon(Icons.settings),
+                )
+              ],
+            ),
+          ],
         ),
       ),
     );
@@ -56,7 +54,7 @@ class XylophoneApp extends StatelessWidget {
           player.play('note${index + 1}.wav');
         },
         child: Container(
-          color: Colors.primaries[index + 5],
+          color: Colors.primaries[index * 2],
         ),
       ),
     );
