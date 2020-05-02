@@ -1,16 +1,16 @@
 import 'package:audioplayers/audio_cache.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await SystemChrome.setEnabledSystemUIOverlays([]);
-  await SystemChrome.setPreferredOrientations(
-    [
-      DeviceOrientation.landscapeLeft,
-      DeviceOrientation.landscapeRight,
-    ],
-  );
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await SystemChrome.setEnabledSystemUIOverlays([]);
+  // await SystemChrome.setPreferredOrientations(
+  //   [
+  //     DeviceOrientation.landscapeLeft,
+  //     DeviceOrientation.landscapeRight,
+  //   ],
+  // );
   runApp(XylophoneApp());
 }
 
@@ -33,7 +33,6 @@ class XylophoneApp extends StatelessWidget {
               ),
               ButtonBar(
                 buttonPadding: EdgeInsets.symmetric(vertical: 16),
-                
                 children: <Widget>[
                   IconButton(
                     color: Colors.white,
@@ -53,7 +52,7 @@ class XylophoneApp extends StatelessWidget {
     return Expanded(
       child: GestureDetector(
         onTapDown: (_) {
-          HapticFeedback.mediumImpact();
+          // HapticFeedback.mediumImpact();
           player.play('note${index + 1}.wav');
         },
         child: Container(
